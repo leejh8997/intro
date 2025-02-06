@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>온라인 프로필</title>
+	<meta charset="utf-8">
+  <style>
+    table {
+      width:70%; 
+      border:1px solid #222; 
+      border-collapse: collapse; 
+    }
+    thead {
+      background:#eee;  
+    }
+    th, td {
+      border:1px solid #ccc; 
+      padding:5px;  
+      font-size:0.8em; 
+    }
+    #container{
+        background-color: black;
+        width: 1030px;
+        height: 1020px;
+        margin: 10px auto;
+        border-radius: 10px;
+        
+    }
+    #side{
+        width: 250px;
+        height: 1000px;
+        float: left;
+        background-color: #2f2f33;
+        margin: 10px 10px;
+        padding: 25px 25px;
+        border-radius: 10px ;
+    }
+    #contents{
+        width: 650px;
+        height: 1000px;
+        float: left;
+        background-color: #2f2f33;
+        margin: 10px 10px 10px 0px;
+        padding: 25px 25px;
+        border-radius: 10px ;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    .subtitle{
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .img{
+        width: 250px;
+        height: 250px;
+        
+        border-radius: 50%;
+        background-image: url("/media/tft.png");
+        background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- 사이드바 -->
+        <div id="side">
+            <div id="namecard" style="color: white;">
+                <div class="img"></div>
+                <div style="text-align: center;"><span class="bold">H</span>ong <span class="bold">G</span>ildong</div>    
+                <p style="margin-bottom: 100px;">HTML 재미없다</p>
+            </div>
+            <div id="detail" style="margin-bottom: 30px; color: white;">
+                <p>Incheon, Korea</p>
+                <p>test@naver.com</p>                                 
+            </div>
+            <div id="sns" style="position:relative; top: 200px;">
+                <h2 >SNS</h2>
+                <h3><a href="#">클릭!</a></h3>
+            </div>           
+        </div>
+        <div id="contents">
+            <section>
+                <h2 class="subtitle" style="color: rgb(90, 90, 253);">자기소개</h2>
+                <p style="color: white;"><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+            </section>
+            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <!-- 경력 -->
+            <section>
+                <h2 class="subtitle" style="color: rgb(90, 90, 253);">Experience</h2>
+                <ul style="color: white;">
+                    <li>프론트엔드
+                        <ul>
+                            <li>HTML/CSS/JAVASCRIPT </li>
+                            <li>웹 페이지 잘 만든다 </li>
+                            <li>다 잘함</li> 
+                        </ul>
+                    </li>
+                    <li>백엔드
+                        <ul>
+                            <li>자바 잘함 </li>
+                            <li>오라클 더 잘함</li>
+                        </ul>                        
+                    </li>
+                </ul>             
+            </section>
+            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <!-- 숙련도 -->
+            <section>
+                <h2 class="subtitle" style="color: rgb(90, 90, 253);">보유 기술</h2>
+                <li style="list-style: none; color: white;"> 
+                    <ul>
+                        <li>자바 </li>
+                        <li>오라클</li>
+                    </ul>                        
+                </li>
+            </section>
+            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <!-- 학력 -->
+            <section>
+                <h2 class="subtitle" style="color: rgb(90, 90, 253);">Education</h2>
+                <table >
+                  <caption style="color: white;">학력 사항</caption>
+                  <thead >
+                      <tr>
+                          <th>출신학교</th>
+                          <th>전공</th>
+                          <th>기간</th>
+                          <th>구분</th>
+                      </tr>
+                  </thead>
+                  <tbody style="color: white;">
+                      <tr>
+                          <td>좋은대학교</td>
+                          <td>좋은학과</td>
+                          <td>2010.3 ~ 2013.2</td>
+                          <td>졸업</td>
+                      </tr>
+                      <tr>
+                          <td>꽤좋은고등학교</td>
+                          <td> - </td>
+                          <td>2007.3 ~ 2009.2</td>
+                          <td>졸업</td>
+                      </tr>
+                  </tbody>
+                </table>
+            </section>
+            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+        </div>        
+    </div>
+</body>
+</html>
