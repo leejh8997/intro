@@ -4,43 +4,53 @@
 	<title>온라인 프로필</title>
 	<meta charset="utf-8">
   <style>
+    body {
+        background-image: url("media/background.png");
+    }
     table {
       width:70%; 
       border:1px solid #222; 
       border-collapse: collapse; 
     }
     thead {
-      background:#eee;  
+      background:#b0abeb;  
     }
     th, td {
-      border:1px solid #ccc; 
+      border:1px solid rgb(90, 90, 253); 
       padding:5px;  
       font-size:0.8em; 
     }
     #container{
-        background-color: black;
-        width: 1030px;
-        height: 1020px;
+        /* background-color: black; */
+        width: 1300px;
+        height: 870px;
         margin: 10px auto;
-        border-radius: 10px;
+        /* border-radius: 10px; */
         
     }
     #side{
-        width: 250px;
-        height: 1000px;
+        width: 350px;
+        height: 850px;
         float: left;
-        background-color: #2f2f33;
-        margin: 10px 10px;
-        padding: 25px 25px;
+        background-color: #a8a8f342;
+        border: 2px solid rgb(113, 113, 238);
+        margin: 10px auto;
+        padding: 30px 30px;
         border-radius: 10px ;
+        display: flex;  /* 플렉스박스로 자식 요소들 가운데 정렬 */
+        flex-direction: column; /* 자식 요소들이 세로로 정렬되도록 */
+        align-items: center;  /* 수평 가운데 정렬 */
+        justify-content: flex-start; /* 콘텐츠를 위쪽으로 정렬 */
     }
     #contents{
-        width: 650px;
-        height: 1000px;
+        width: 750px;
+        height: 850px;
         float: left;
-        background-color: #2f2f33;
-        margin: 10px 10px 10px 0px;
-        padding: 25px 25px;
+        background-color: #a8a8f342;
+        border: 2px solid rgb(113, 113, 238);
+        margin: 10px;
+        margin-left: 20px;
+        padding: 30px ;
         border-radius: 10px ;
     }
     .bold{
@@ -48,15 +58,16 @@
     }
     .subtitle{
         font-weight: bold;
-        font-size: 40px;
+        font-size: 30px;
     }
     .img{
         width: 250px;
         height: 250px;
-        
+        border: 2px solid rgb(113, 113, 238);
         border-radius: 50%;
         background-image: url("media/tft.png");
         background-size: cover;
+        margin-bottom: 30px;
     }
   </style>
 </head>
@@ -65,30 +76,30 @@
     <div id="container">
         <!-- 사이드바 -->
         <div id="side">
-            <div id="namecard" style="color: white;">
+            <div id="namecard">
                 <div class="img"></div>
-                <div style="text-align: center;"><span class="bold">H</span>ong <span class="bold">G</span>ildong</div>    
-                <p style="margin-bottom: 100px;">HTML 재미없다</p>
+                <div style="text-align: center; font-weight: bold;">이재형</div>    
+                <p style="margin-bottom: 350px; text-align: center;">Oracle 재밌다</p>
             </div>
-            <div id="detail" style="margin-bottom: 30px; color: white;">
+            <div id="detail">
                 <p>Incheon, Korea</p>
                 <p>test@naver.com</p>                                 
             </div>
-            <div id="sns" style="position:relative; top: 200px;">
-                <h2 >SNS</h2>
-                <h3><a href="#">클릭!</a></h3>
+            <div id="sns" style="position:relative; ">
+                <h2 ><i>SNS</i></h2>
+                <h3><a href="https://lolchess.gg/profile/kr/%EB%AA%BB%ED%95%B4%EB%8F%84%EA%B7%B8%EB%A5%B4%EB%A5%B4%EB%8B%88-KR1/set13" style="text-decoration: none;">클릭?</a></h3>
             </div>           
         </div>
         <div id="contents">
             <section>
                 <h2 class="subtitle" style="color: rgb(90, 90, 253);">자기소개</h2>
-                <p style="color: white;"><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
             </section>
-            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <p style="margin: 30px 0; border-bottom: 2px dashed rgb(90, 90, 253);"> </p>
             <!-- 경력 -->
             <section>
                 <h2 class="subtitle" style="color: rgb(90, 90, 253);">Experience</h2>
-                <ul style="color: white;">
+                <ul >
                     <li>프론트엔드
                         <ul>
                             <li>HTML/CSS/JAVASCRIPT </li>
@@ -104,23 +115,23 @@
                     </li>
                 </ul>             
             </section>
-            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <p style="margin: 30px 0; border-bottom: 2px dashed rgb(90, 90, 253);"> </p>
             <!-- 숙련도 -->
             <section>
                 <h2 class="subtitle" style="color: rgb(90, 90, 253);">보유 기술</h2>
-                <li style="list-style: none; color: white;"> 
+                <li style="list-style: none; "> 
                     <ul>
                         <li>자바 </li>
                         <li>오라클</li>
                     </ul>                        
                 </li>
             </section>
-            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <p style="margin: 30px 0; border-bottom: 2px dashed rgb(90, 90, 253);"> </p>
             <!-- 학력 -->
             <section>
                 <h2 class="subtitle" style="color: rgb(90, 90, 253);">Education</h2>
                 <table >
-                  <caption style="color: white;">학력 사항</caption>
+                  <caption class="bold">학력 사항</caption>
                   <thead >
                       <tr>
                           <th>출신학교</th>
@@ -129,7 +140,7 @@
                           <th>구분</th>
                       </tr>
                   </thead>
-                  <tbody style="color: white;">
+                  <tbody >
                       <tr>
                           <td>좋은대학교</td>
                           <td>좋은학과</td>
@@ -145,7 +156,7 @@
                   </tbody>
                 </table>
             </section>
-            <p style="margin: 30px 0; border-bottom: 2px dashed #ccc;"> </p>
+            <p style="margin: 30px 0; border-bottom: 2px dashed rgb(90, 90, 253);"> </p>
         </div>        
     </div>
 </body>
