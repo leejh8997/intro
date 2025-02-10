@@ -174,13 +174,21 @@
         let datetime = new Date();
         let pTime = document.querySelector("#time");
         let time;
-        if(datetime.getSeconds < 10){
-            time = datetime.getHours() + " : " + datetime.getMinutes() + " : 0" + datetime.getSeconds();
-            pTime.innerHTML =time ;
-        }else{
-            time = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
-            pTime.innerHTML = time;
+        let hours = datetime.getHours();
+        let minutes = datetime.getMinutes();
+        let seconds = datetime.getSeconds();
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
         }
-        
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+
+        time = hours + " : " + minutes + " : " + seconds;
+        pTime.innerHTML = time;
     },1000)
 </script>
