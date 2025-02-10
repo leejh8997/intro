@@ -69,6 +69,11 @@
         background-size: cover;
         margin-bottom: 30px;
     }
+    #time{
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
+        }
   </style>
 </head>
 
@@ -79,7 +84,7 @@
             <div id="namecard">
                 <div class="img"></div>
                 <div style="text-align: center; font-weight: bold;">이재형</div>    
-                <p style="margin-bottom: 350px; text-align: center;">Oracle 재밌다</p>
+                <p style="margin-bottom: 250px; text-align: center;">Oracle 재밌다</p>
             </div>
             <div id="detail">
                 <p>Incheon, Korea</p>
@@ -88,7 +93,10 @@
             <div id="sns" style="position:relative; ">
                 <h2 ><i>SNS</i></h2>
                 <h3><a href="https://lolchess.gg/profile/kr/%EB%AA%BB%ED%95%B4%EB%8F%84%EA%B7%B8%EB%A5%B4%EB%A5%B4%EB%8B%88-KR1/set13" style="text-decoration: none;">클릭?</a></h3>
-            </div>           
+            </div>
+            <div>
+                <p id="time"></p>
+            </div>       
         </div>
         <div id="contents">
             <section>
@@ -161,3 +169,18 @@
     </div>
 </body>
 </html>
+<script>
+    setInterval(()=>{
+        let datetime = new Date();
+        let pTime = document.querySelector("#time");
+        let time;
+        if(datetime.getSeconds < 10){
+            time = datetime.getHours() + " : " + datetime.getMinutes() + " : 0" + datetime.getSeconds();
+            pTime.innerHTML =time ;
+        }else{
+            time = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
+            pTime.innerHTML = time;
+        }
+        
+    },1000)
+</script>
