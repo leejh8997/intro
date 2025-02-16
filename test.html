@@ -13,31 +13,23 @@
         .light-mode {
             background-color: beige;
         }
+
         .dark-mode {
             background-color: rgb(0, 0, 0);
             color: white;
         }
-        /* #mode-btn{
+
+        #mode-btn {
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 10px;
-            background-color: beige;
-            border: 1px solid black;
+            cursor: pointer;
         }
-        .dark-mode #mode-btn{
-            background-color: black;
-            border: 1px solid white;
-            color: white;
-        } */
-        
 
         #container {
-            /* background-color: black; */
             width: 1300px;
             height: 870px;
             margin: 10px auto;
-            /* border-radius: 10px; */
 
         }
 
@@ -45,7 +37,7 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            
+
             border-radius: 10px;
             width: 1244px;
             height: 100px;
@@ -63,13 +55,9 @@
             padding: 30px 30px;
             border-radius: 10px;
             display: flex;
-            /* 플렉스박스로 자식 요소들 가운데 정렬 */
             flex-direction: column;
-            /* 자식 요소들이 세로로 정렬되도록 */
             align-items: center;
-            /* 수평 가운데 정렬 */
             justify-content: flex-start;
-            /* 콘텐츠를 위쪽으로 정렬 */
         }
 
         #contents {
@@ -84,7 +72,7 @@
             border-radius: 10px;
         }
 
-        .top-menu{
+        .top-menu {
             width: 100px;
             height: 100px;
             text-align: center;
@@ -104,14 +92,14 @@
             display: block;
         }
 
-        .top-menu .menu a {
-            background-color: #a8a8f342;
+        .top-menu a {
+            background-color: #dcdce742;
             display: block;
             text-decoration: none;
-            padding: 10px;
+            
         }
 
-        .top-menu .menu a:hover {
+        .top-menu a:hover {
             background-color: black;
             color: white;
         }
@@ -134,8 +122,8 @@
             margin-bottom: 30px;
         }
 
-        .hr-line{
-            margin: 30px 0; 
+        .hr-line {
+            margin: 30px 0;
             border-bottom: 2px dashed rgb(90, 90, 253);
         }
 
@@ -165,33 +153,33 @@
 </head>
 
 <body class="light-mode">
-    <span id="#mode-btn" class="material-symbols-outlined" onclick="fnMode()" style="cursor: pointer;">
+    <span id="mode-btn" class="material-symbols-outlined" onclick="fnMode()" >
         light_mode
     </span>
     <div id="container">
         <div id="header">
             <div class="top-menu">
-                <a href="#">메뉴1</a>
+                <a href="#" style="text-decoration: none;">메뉴1</a>
                 <div class="menu">
-                        <a>Menu 1</a>
-                        <a>Menu 2</a>
-                        <a>Menu 3</a>            
+                    <a>Menu 1</a>
+                    <a>Menu 2</a>
+                    <a>Menu 3</a>
                 </div>
             </div>
             <div class="top-menu">
                 <a href="#">메뉴2</a>
                 <div class="menu">
-                        <a>Menu 1</a>
-                        <a>Menu 2</a>
-                        <a>Menu 3</a>            
+                    <a>Menu 1</a>
+                    <a>Menu 2</a>
+                    <a>Menu 3</a>
                 </div>
             </div>
             <div class="top-menu">
                 <a href="#">메뉴3</a>
                 <div class="menu">
-                        <a>Menu 1</a>
-                        <a>Menu 2</a>
-                        <a>Menu 3</a>            
+                    <a>Menu 1</a>
+                    <a>Menu 2</a>
+                    <a>Menu 3</a>
                 </div>
             </div>
         </div>
@@ -288,7 +276,7 @@
 
 </html>
 <script>
-    function fnMode(){
+    function fnMode() {
         let body = document.body;
         let btn = document.querySelector("#mode-btn");
         let profileImage = document.querySelector("#profile-image");
