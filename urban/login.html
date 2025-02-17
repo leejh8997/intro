@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        label>span {
+            display: inline-block;
+            width: 65px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <div>
+                <label>
+                    <span>아이디</span> :
+                    <input v-model="inputId" @keyup.enter="fnLogin()" placeholder="test123">
+                </label>
+            </div>
+            <div>
+                <label>
+                <span>비밀번호</span> :
+                <input type="password" v-model="inputPwd" @keyup.enter="fnLogin()" placeholder="1234#A">
+                </label>
+            </div>
+            <div>
+                <button @click="fnLogin()">로그인</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                inputId: "",
+                inputPwd: ""
+            };
+        },
+        methods: {
+            fnLogin: function () {
+                let self = this;
+                if ("test123" == self.inputId && "1234#A" == self.inputPwd) {
+
+                    location.href = "test.html"
+                } else {
+                    alert("실패");
+                }
+            }
+        },
+        mounted() {
+        }
+    });
+
+    app.mount('#app');
+</script>

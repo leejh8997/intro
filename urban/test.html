@@ -96,7 +96,7 @@
             background-color: #dcdce742;
             display: block;
             text-decoration: none;
-            
+
         }
 
         .top-menu a:hover {
@@ -127,6 +127,16 @@
             border-bottom: 2px dashed rgb(90, 90, 253);
         }
 
+        .auth-buttons {
+            display: flex;
+            flex-direction: row-reverse;
+            
+            
+            
+            
+            gap: 10px;
+        }
+
         #time {
             font-size: 20px;
             color: blue;
@@ -153,34 +163,39 @@
 </head>
 
 <body class="light-mode">
-    <span id="mode-btn" class="material-symbols-outlined" onclick="fnMode()" >
+    <span id="mode-btn" class="material-symbols-outlined" onclick="fnMode()">
         light_mode
     </span>
     <div id="container">
         <div id="header">
             <div class="top-menu">
-                <a href="#" style="text-decoration: none;">메뉴1</a>
+                <a href="javascript:;" style="text-decoration: none;">메뉴1</a>
                 <div class="menu">
-                    <a>Menu 1</a>
-                    <a>Menu 2</a>
-                    <a>Menu 3</a>
+                    <a>Day 1</a>
+                    <a>Day 2</a>
+                    <a>Day 3</a>
                 </div>
             </div>
             <div class="top-menu">
-                <a href="#">메뉴2</a>
+                <a href="javascript:;">메뉴2</a>
                 <div class="menu">
-                    <a>Menu 1</a>
-                    <a>Menu 2</a>
-                    <a>Menu 3</a>
+                    <a>Day 4</a>
+                    <a>Day 5</a>
+                    <a>Day 6</a>
                 </div>
             </div>
             <div class="top-menu">
-                <a href="#">메뉴3</a>
+                <a href="javascript:;">메뉴3</a>
                 <div class="menu">
-                    <a>Menu 1</a>
-                    <a>Menu 2</a>
-                    <a>Menu 3</a>
+                    <a>Day 7</a>
+                    <a>Day 8</a>
+                    <a>Day 9</a>
                 </div>
+            </div>
+            <div class="auth-buttons">
+                <button class="auth-btn" onclick="location.href='join.html'">회원가입</button>
+                <span class="divider" style="margin: 5px;">|</span>
+                <button class="auth-btn" onclick="location.href='login.html'">로그인</button>
             </div>
         </div>
         <!-- 사이드바 -->
@@ -195,8 +210,7 @@
                 <p>test@naver.com</p>
             </div>
             <div>
-                <h3><a href="http://127.0.0.1:5502/urban/index.html"
-                        style="text-decoration: none;">클릭</a></h3>
+                <h3><a href="http://127.0.0.1:5502/urban/index.html" style="text-decoration: none;">HOME</a></h3>
             </div>
             <div>
                 <p id="time"></p>
@@ -281,13 +295,6 @@
         let profileImage = document.querySelector("#profile-image");
         body.classList.toggle('dark-mode');
         body.classList.toggle('light-mode');
-        // if(body.classList.contains('dark-mode')){
-        //     btn.style.color = "white";
-        //     profileImage.style.url = "media/profile-dark.png";
-        // } else{
-        //     btn.style.color = "black";
-        //     profileImage.style.url = "media/profile-light.png";
-        // }
     }
     setInterval(() => {
         let datetime = new Date();
