@@ -291,16 +291,6 @@
             };
         },
         methods: {
-            fnPopup() {
-                let top = (screen.availHeight - 500) / 2;
-                let left = (screen.availWidth - 500) / 2;
-
-                let popup = window.open('time.html', 'time', `width=500,height=500,left=${left},top=${top}`);
-
-                if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-                    alert("팝업이 차단되었습니다. 브라우저 설정에서 팝업 차단을 해제해주세요.");
-                }
-            },
             updateTime() {
                 let datetime = new Date();
                 let hours = datetime.getHours();
