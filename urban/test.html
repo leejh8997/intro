@@ -117,8 +117,7 @@
         .profile-image {
             width: 250px;
             height: 250px;
-            background-image: url("media/profile-dark.png");
-            background-size: cover;
+            cursor: pointer;
             margin-bottom: 30px;
         }
 
@@ -127,19 +126,8 @@
             border-bottom: 2px dashed rgb(90, 90, 253);
         }
 
-        .auth-buttons {
-            display: flex;
-            flex-direction: row-reverse;
-            
-            
-            
-            
-            gap: 10px;
-        }
-
         #time {
-            font-size: 20px;
-            color: blue;
+            font-size: 15px;
             font-weight: bold;
         }
 
@@ -163,177 +151,189 @@
 </head>
 
 <body class="light-mode">
-    <span id="mode-btn" class="material-symbols-outlined" onclick="fnMode()">
-        light_mode
-    </span>
-    <div id="container">
-        <div id="header">
-            <div class="top-menu">
-                <a href="javascript:;" style="text-decoration: none;">미구현</a>
-                <div class="menu">
-                    <a>Menu 1</a>
-                    <a>Menu 2</a>
-                    <a>Menu 3</a>
+    <div id="app">
+        <span id="mode-btn" class="material-symbols-outlined" onclick="fnMode()">
+            light_mode
+        </span>
+        <div id="container">
+            <div id="header">
+                <div class="top-menu">
+                    <a href="javascript:;" style="text-decoration: none;">미구현</a>
+                    <div class="menu">
+                        <a>Menu 1</a>
+                        <a>Menu 2</a>
+                        <a>Menu 3</a>
+                    </div>
+                </div>
+                <div class="top-menu">
+                    <a href="javascript:;">미구현</a>
+                    <div class="menu">
+                        <a>Menu 4</a>
+                        <a>Menu 5</a>
+                        <a>Menu 6</a>
+                    </div>
+                </div>
+                <div class="top-menu">
+                    <a href="javascript:;">미구현</a>
+                    <div class="menu">
+                        <a>Menu 7</a>
+                        <a>Menu 8</a>
+                        <a>Menu 9</a>
+                    </div>
+                </div>
+                <div>
+                    <button onclick="location.href='join.html'">회원가입</button>
+                    <span class="divider" style="margin: 5px;">|</span>
+                    <button onclick="location.href='login.html'">로그인</button>
                 </div>
             </div>
-            <div class="top-menu">
-                <a href="javascript:;">미구현</a>
-                <div class="menu">
-                    <a>Menu 4</a>
-                    <a>Menu 5</a>
-                    <a>Menu 6</a>
+            <!-- 사이드바 -->
+            <div id="side">
+                <div id="namecard">
+                    <a @click="imgFlg = !imgFlg">
+                        <img v-if="imgFlg" src="media/profile-dark.png" class="profile-image">
+                        <img v-else src="media/tft.png" class="profile-image">
+                    </a>
+                    <div style="text-align: center; font-weight: bold;">이재형</div>
+                    <p style="margin-bottom: 250px; text-align: center;">Oracle 재밌다</p>
+                </div>
+                <div id="detail">
+                    <p>Incheon, Korea</p>
+                    <p>leejh8997@gmail.com</p>
+                </div>
+                <div>
+                    <h3><a href="https://leejh8997.github.io/intro/urban/index.html"
+                            style="text-decoration: none;">HOME</a></h3>
+                </div>
+                <div>
+                    <p>{{currentTime}}</p>
                 </div>
             </div>
-            <div class="top-menu">
-                <a href="javascript:;">미구현</a>
-                <div class="menu">
-                    <a>Menu 7</a>
-                    <a>Menu 8</a>
-                    <a>Menu 9</a>
-                </div>
-            </div>
-            <div class="auth-buttons">
-                <button class="auth-btn" onclick="location.href='join.html'">회원가입</button>
-                <span class="divider" style="margin: 5px;">|</span>
-                <button class="auth-btn" onclick="location.href='login.html'">로그인</button>
-            </div>
-        </div>
-        <!-- 사이드바 -->
-        <div id="side">
-            <div id="namecard">
-                <div class="profile-image"></div>
-                <div style="text-align: center; font-weight: bold;">이재형</div>
-                <p style="margin-bottom: 250px; text-align: center;">Oracle 재밌다</p>
-            </div>
-            <div id="detail">
-                <p>Incheon, Korea</p>
-                <p>test@naver.com</p>
-            </div>
-            <div>
-                <h3><a href="https://leejh8997.github.io/intro/urban/index.html" style="text-decoration: none;">HOME</a></h3>
-            </div>
-            <div>
-                <p id="time"></p>
-            </div>
-        </div>
-        <div id="contents">
-            <section>
-                <h2 class="subtitle">자기소개</h2>
-                <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
-            </section>
-            <p class="hr-line"> </p>
-            <!-- 경력 -->
-            <section>
-                <h2 class="subtitle">Experience</h2>
-                <ul>
-                    <li>프론트엔드
-                        <ul>
-                            <li>HTML/CSS/JAVASCRIPT </li>
-                            <li>웹 페이지 잘 만든다 </li>
-                            <li>다 잘함</li>
-                        </ul>
-                    </li>
-                    <li>백엔드
-                        <ul>
-                            <li>자바 잘함 </li>
-                            <li>오라클 더 잘함</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <p class="hr-line"> </p>
-            <!-- 숙련도 -->
-            <section>
-                <h2 class="subtitle">보유 기술</h2>
-                <li style="list-style: none; ">
+            <div id="contents">
+                <section>
+                    <h2 class="subtitle">자기소개</h2>
+                    <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                </section>
+                <p class="hr-line"> </p>
+                <!-- 경력 -->
+                <section>
+                    <h2 class="subtitle">Experience</h2>
                     <ul>
-                        <li>자바 </li>
-                        <li>오라클</li>
+                        <li>프론트엔드
+                            <ul>
+                                <li>HTML/CSS/JAVASCRIPT </li>
+                                <li>웹 페이지 잘 만든다 </li>
+                                <li>미적감각 없음</li>
+                            </ul>
+                        </li>
+                        <li>백엔드
+                            <ul>
+                                <li>자바 잘함 </li>
+                                <li>오라클 더 잘함</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </section>
-            <p class="hr-line"> </p>
-            <!-- 학력 -->
-            <section>
-                <h2 class="subtitle">Education</h2>
-                <table>
-                    <caption class="bold">학력 사항</caption>
-                    <thead>
-                        <tr>
-                            <th>출신학교</th>
-                            <th>전공</th>
-                            <th>기간</th>
-                            <th>구분</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>좋은대학교</td>
-                            <td>좋은학과</td>
-                            <td>2010.3 ~ 2013.2</td>
-                            <td>졸업</td>
-                        </tr>
-                        <tr>
-                            <td>꽤좋은고등학교</td>
-                            <td> - </td>
-                            <td>2007.3 ~ 2009.2</td>
-                            <td>졸업</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <p class="hr-line"> </p>
+                </section>
+                <p class="hr-line"> </p>
+                <!-- 숙련도 -->
+                <section>
+                    <h2 class="subtitle">보유 기술</h2>
+                    <li style="list-style: none; ">
+                        <ul>
+                            <li>자바 </li>
+                            <li>오라클</li>
+                        </ul>
+                    </li>
+                </section>
+                <p class="hr-line"> </p>
+                <!-- 학력 -->
+                <section>
+                    <h2 class="subtitle">Education</h2>
+                    <table>
+                        <caption class="bold">학력 사항</caption>
+                        <thead>
+                            <tr>
+                                <th>출신학교</th>
+                                <th>전공</th>
+                                <th>기간</th>
+                                <th>구분</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>좋은대학교</td>
+                                <td>좋은학과</td>
+                                <td>2010.3 ~ 2013.2</td>
+                                <td>졸업</td>
+                            </tr>
+                            <tr>
+                                <td>꽤좋은고등학교</td>
+                                <td> 이과 </td>
+                                <td>2007.3 ~ 2009.2</td>
+                                <td>졸업</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <p class="hr-line"> </p>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
 <script>
-    function fnMode() {
-        let body = document.body;
-        let btn = document.querySelector("#mode-btn");
-        let profileImage = document.querySelector("#profile-image");
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
-    }
-    setInterval(() => {
-        let datetime = new Date();
-        let pTime = document.querySelector("#time");
-        let time;
-        let hours = datetime.getHours();
-        let minutes = datetime.getMinutes();
-        let seconds = datetime.getSeconds();
-
-        if (seconds < 10) {
-            seconds = "0" + seconds;
-        }
-        if (minutes < 10) {
-            minutes = "0" + minutes;
-        }
-        if (hours < 10) {
-            hours = "0" + hours;
-        }
-
-        time = hours + " : " + minutes + " : " + seconds;
-        pTime.innerHTML = time;
-    }, 1000)
     const app = Vue.createApp({
         data() {
             return {
-                // 변수
+                imgFlg: true,
+                currentTime: ""
             };
         },
         methods: {
-            // 함수(메소드)
-            fnSample: function () {
+            fnPopup() {
+                let top = (screen.availHeight - 500) / 2;
+                let left = (screen.availWidth - 500) / 2;
 
+                let popup = window.open('time.html', 'time', `width=500,height=500,left=${left},top=${top}`);
+
+                if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+                    alert("팝업이 차단되었습니다. 브라우저 설정에서 팝업 차단을 해제해주세요.");
+                }
+            },
+            updateTime() {
+                let datetime = new Date();
+                let hours = datetime.getHours();
+                let minutes = datetime.getMinutes();
+                let seconds = datetime.getSeconds();
+
+                if (seconds < 10) seconds = "0" + seconds;
+                if (minutes < 10) minutes = "0" + minutes;
+                if (hours < 10) hours = "0" + hours;
+
+                this.currentTime = `${hours} : ${minutes} : ${seconds}`;
             }
+
         },
         mounted() {
-            // 처음 시작할 때 실행되는 부분
+            this.updateTime(); // 초기 실행
+            setInterval(this.updateTime, 1000);
+
+            setTimeout(() => {
+            this.fnPopup();
+        }, 1000);
 
         }
     });
-
     app.mount('#app');
+    function fnMode() {
+        let body = document.body;
+        let btn = document.querySelector("#mode-btn");
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+    }
+
+
+
+
 </script>

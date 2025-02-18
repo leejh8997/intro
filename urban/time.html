@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            margin : 10px auto;
+            display:flex; 
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+
+        }
+        #time{
+            font-size: 40px;
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="time"></div>
+        <div>
+            <button onclick="fnClose()">닫기</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    setInterval(()=>{
+        let datetime = new Date();
+        let pTime = document.querySelector("#time");
+        let time;
+        let hours = datetime.getHours();
+        let minutes = datetime.getMinutes();
+        let seconds = datetime.getSeconds();
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+
+        time = hours + " : " + minutes + " : " + seconds;
+        pTime.innerHTML = time;
+    },1000)
+
+    function fnClose(){
+        window.close();
+    }
+</script>
