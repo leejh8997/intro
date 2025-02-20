@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Document</title>
     <style>
@@ -110,7 +111,7 @@
 
         .subtitle {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 25px;
             color: rgb(90, 90, 253);
         }
 
@@ -122,13 +123,20 @@
         }
 
         .hr-line {
-            margin: 30px 0;
+            margin: 20px 0;
             border-bottom: 2px dashed rgb(90, 90, 253);
         }
 
         #time {
             font-size: 15px;
             font-weight: bold;
+        }
+
+        #chart {
+            width: 155px;
+            height: 155px;
+            display: inline-block;
+            margin-left: 50px;
         }
 
         table {
@@ -238,12 +246,17 @@
                 <!-- 숙련도 -->
                 <section>
                     <h2 class="subtitle">보유 기술</h2>
-                    <li style="list-style: none; ">
+                    <li style="list-style: none; display: inline-block;">
                         <ul>
                             <li>자바 </li>
                             <li>오라클</li>
+                            <li>HTML</li>
+                            <li>javascript</li>
+                            <li>CSS</li>
+                            <li>jsp</li>
                         </ul>
                     </li>
+                    <div id="chart"></div>
                 </section>
                 <p class="hr-line"> </p>
                 <!-- 학력 -->
@@ -287,7 +300,51 @@
         data() {
             return {
                 imgFlg: true,
-                currentTime: ""
+                currentTime: "",
+                options: {
+                    series: [{
+                        name: '',
+                        data: [80, 80, 70, 70, 20, 60],
+                    }],
+                    chart: {
+                        height: 155,
+                        type: 'radar',
+                    },
+                    title: {
+                        text: '숙련도',
+                        align: 'center'
+                    },
+                    yaxis: {
+                        stepSize: 20,
+                        show: false,
+                        max: 100
+
+                    },
+                    markers: {
+                        size: 3,
+                        hover: { size: 5 },
+                        stepSize: 100
+                    },
+                    xaxis: {
+                        categories: ['자바', '오라클', 'HTML', 'javascript', 'CSS', 'jsp'],
+                        labels: {
+                            style: {
+                                colors: ['#000', '#000', '#000', '#000', '#000', '#000'],
+                                fontSize: '12px',
+                            }
+                        }
+                    },
+                    plotOptions: {
+                        radar: {
+                            polygons: {
+                                strokeColors: '#464646',
+                                fill: {
+                                    colors: ['#d9d9d9', '#e6e6e6']
+                                }
+                            }
+                        }
+                    }
+                }
             };
         },
         methods: {
@@ -308,13 +365,11 @@
         mounted() {
             this.updateTime(); // 초기 실행
             setInterval(this.updateTime, 1000);
-
-            setTimeout(() => {
-            this.fnPopup();
-        }, 1000);
-
+            let chart = new ApexCharts(document.querySelector("#chart"), this.options);
+            chart.render();
         }
     });
+
     app.mount('#app');
     function fnMode() {
         let body = document.body;

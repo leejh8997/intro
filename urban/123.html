@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>Document</title>
+    <style>
+        #chart {
+            width: 155px;
+            height: 155px;
+            color: #464646', ' #979797',' #f8f8f8',' #fff'
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="chart"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+
+                options: {
+                    series: [{
+                        name: '',
+                        data: [80, 80, 70, 70, 20, 60],
+                    }],
+                    chart: {
+                        height: 155,
+                        type: 'radar',
+                    },
+                    title: {
+                        text: '숙련도',
+                        align: 'center'
+                    },
+                    yaxis: {
+                        stepSize: 20,
+                        show: false,
+                        max: 100
+
+                    },
+                    markers: {
+                        size: 3,
+                        hover: { size: 5 },
+                        stepSize: 100
+                    },
+                    xaxis: {
+                        categories: ['자바', '오라클', 'HTML', 'javascript', 'CSS', 'jsp'],
+                        labels: {
+                            style: {
+                                colors: ['#000', '#000', '#000', '#000', '#000', '#000'],
+                                fontSize: '12px',
+                            }
+                        }
+                    },
+
+                    plotOptions: {
+                        radar: {
+                            polygons: {
+                                strokeColors: '#464646',
+                                fill: {
+                                    colors: ['#d9d9d9', '#e6e6e6'] 
+                                }   
+                            }
+                        }
+                    }
+
+                }
+            };
+        },
+        methods: {
+
+
+        },
+        mounted() {
+
+            let chart = new ApexCharts(document.querySelector("#chart"), this.options);
+            chart.render();
+        }
+    });
+
+    app.mount('#app');
+</script>
